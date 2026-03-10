@@ -10,7 +10,7 @@ import fs from "fs";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const JWT_SECRET = process.env.JWT_SECRET || "church-secret-key-12345";
+const JWT_SECRET = process.env.JWT_SECRET || "cfs-secure-secret-key-hepsiba-2026";
 const DATA_DIR = path.join(__dirname, "data");
 
 // Ensure data directory exists
@@ -99,7 +99,7 @@ async function startServer() {
   // Auth Routes
   app.post("/api/admin/login", (req, res) => {
     const { password } = req.body;
-    const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin1234";
+    const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "hepsiba1234";
     if (password === ADMIN_PASSWORD) {
       res.json({ success: true });
     } else {
